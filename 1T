@@ -1,0 +1,100 @@
+// App.js
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // 여기에 예약을 처리하는 로직을 추가할 수 있습니다.
+    alert(`날짜: ${date}, 시간: ${time}`);
+  };
+
+  return (
+    <div className="container">
+      <h1>아이돌 팝업스토어 예약 페이지</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="date">날짜:</label>
+          <input
+            type="date"
+            id="date"
+            value={date}
+            onChange={handleDateChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="time">시간:</label>
+          <input
+            type="time"
+            id="time"
+            value={time}
+            onChange={handleTimeChange}
+            required
+          />
+        </div>
+        <button type="submit">예약하기</button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+/* App.css */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #ff69b4; /* 핑크색 */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type='date'],
+input[type='time'] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #800080; /* 보라색 */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4b0082; /* 더 진한 보라색 */
+}

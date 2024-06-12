@@ -218,3 +218,34 @@ nav ul li a {
     ]
   }
 }
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.11.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+}
+cd frontend
+npm install react-scripts
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",  // Ensure this line is present
+    "react-router-dom": "^6.11.0"
+  }
+}
+npm install
+cd frontend
+rm -rf node_modules
+rm package-lock.json
+npm cache clean --force
+npm install
+npm run build
